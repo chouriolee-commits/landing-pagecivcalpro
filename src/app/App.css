@@ -216,6 +216,10 @@
   display: none;
 }
 
+.navbar__backdrop {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .navbar__brand-tagline {
     display: none;
@@ -229,36 +233,83 @@
     display: inline-flex;
   }
 
+  /* Oscurece el contenido de la página mientras el menú está abierto */
+  .navbar__backdrop {
+    display: block;
+    position: fixed;
+    inset: var(--navbar-height) 0 0 0;
+    background-color: rgba(7, 17, 32, 0.55);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-base);
+  }
+
+  .navbar__backdrop--visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Panel desplegable bajo la barra, en lugar de cubrir toda la pantalla */
   .navbar__nav {
     position: fixed;
     top: var(--navbar-height);
     left: 0;
     right: 0;
-    bottom: 0;
-    background-color: var(--color-bg-dark);
-    padding: 2rem var(--container-pad);
-    display: none;
+    display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.25rem;
+    padding: 0.75rem var(--container-pad) 1.5rem;
+    background-color: rgba(7, 17, 32, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border-dark);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    max-height: calc(100dvh - var(--navbar-height));
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    transition:
+      opacity var(--transition-base),
+      transform var(--transition-base),
+      visibility var(--transition-base);
   }
 
   .navbar__nav--open {
-    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
   }
 
   .navbar__links {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 1.25rem;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .navbar__links li + li {
+    border-top: 1px solid var(--color-border-dark);
   }
 
   .navbar__link {
-    font-size: 1.1rem;
+    display: block;
+    font-size: 1rem;
+    padding: 0.9rem 0.25rem;
+  }
+
+  .navbar__link--active {
+    color: var(--color-primary-light);
+  }
+
+  /* En móvil el activo se marca con color, no con subrayado */
+  .navbar__link--active::after {
+    display: none;
   }
 
   .navbar__cta-mobile {
     display: inline-flex;
-    align-self: flex-start;
+    width: 100%;
+    justify-content: center;
   }
 }
 

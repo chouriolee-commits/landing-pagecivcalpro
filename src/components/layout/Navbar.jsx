@@ -34,16 +34,28 @@ function Navbar() {
     return () => observer.disconnect();
   }, []);
 
-  // Bloquea el scroll del body mientras el menú móvil está abierto.
+  // Bloquea el scroll del body y permite cerrar con Escape mientras el menú está abierto.
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
+
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') setMenuOpen(false);
+    };
+    if (menuOpen) document.addEventListener('keydown', onKeyDown);
+
     return () => {
       document.body.style.overflow = '';
+      document.removeEventListener('keydown', onKeyDown);
     };
   }, [menuOpen]);
 
   return (
     <header className="navbar">
+      <div
+        className={`navbar__backdrop ${menuOpen ? 'navbar__backdrop--visible' : ''}`}
+        onClick={() => setMenuOpen(false)}
+        aria-hidden="true"
+      />
       <div className="navbar__inner container">
         <a href="#inicio" className="navbar__brand" aria-label="CivCalPro — ir al inicio">
           <img src={logo} alt="" width="44" height="38" />
