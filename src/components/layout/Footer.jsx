@@ -153,7 +153,7 @@ function Footer() {
               </p>
             </form>
             <p className="footer__contact-line">
-              Escríbenos: <a href="mailto:contacto@civcalpro.app">contacto@civcalpro.app</a>
+              Escríbenos: <a href="mailto:chouriolee@gmail.com">chouriolee@gmail.com</a>
             </p>
           </div>
         </div>

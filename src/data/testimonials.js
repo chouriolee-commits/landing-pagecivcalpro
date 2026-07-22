@@ -35,8 +35,6 @@ export const TESTIMONIALS = [
 
 /** Instituciones que confían en CivCalPro (hero). */
 export const TRUSTED_BY = [
-  'Universidad Nacional',
-  'Universidad de los Andes',
-  'UPB',
-  'Politécnico Grancolombiano',
+  'Uniremington',
+  'UNELLEZ',
 ];
