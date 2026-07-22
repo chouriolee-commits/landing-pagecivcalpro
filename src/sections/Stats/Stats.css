@@ -1,0 +1,27 @@
+/**
+ * Stats — banda navy redondeada con 4 métricas.
+ */
+.stats {
+  padding: 1rem 0 3rem;
+  background-color: var(--color-bg-white);
+}
+
+.stats__band {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 2.5rem 3rem;
+}
+
+@media (max-width: 1024px) {
+  .stats__band {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .stats__band {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.5rem;
+  }
+}

@@ -1,0 +1,76 @@
+/**
+ * CTA — banda navy final con icono de cohete y botones.
+ */
+.cta {
+  padding: 1rem 0 var(--section-pad);
+  background-color: var(--color-bg-light);
+}
+
+.cta__band {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2.75rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Rejilla sutil de fondo, coherente con el hero */
+.cta__band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(59, 130, 246, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.06) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
+}
+
+.cta__content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.cta__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: rgba(46, 168, 92, 0.15);
+  color: var(--color-primary-light);
+}
+
+.cta__title {
+  color: #fff;
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.cta__subtitle {
+  color: var(--color-text-light-muted);
+  font-size: 0.9rem;
+  max-width: 420px;
+}
+
+.cta__actions {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .cta__band {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.25rem 1.75rem;
+  }
+}

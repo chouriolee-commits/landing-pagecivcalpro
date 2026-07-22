@@ -1,0 +1,38 @@
+/**
+ * Animaciones reutilizables.
+ * Se desactivan automáticamente con prefers-reduced-motion (ver reset.css).
+ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.9s ease both;
+}
+
+/* Retrasos escalonados para listas de tarjetas */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }

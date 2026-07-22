@@ -1,0 +1,14 @@
+/**
+ * Punto de entrada de estilos globales.
+ * El orden importa: variables → reset → tipografía → utilidades → animaciones.
+ */
+@import './variables.css';
+@import './reset.css';
+@import './typography.css';
+@import './utilities.css';
+@import './animations.css';
+
+body {
+  background-color: var(--color-bg-white);
+  overflow-x: hidden;
+}

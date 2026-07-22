@@ -1,0 +1,42 @@
+/**
+ * Escala tipográfica de la landing.
+ */
+body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-text-body);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-text-dark);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+p {
+  font-size: 1.0625rem;
+}
+
+p {
+  line-height: 1.65;
+}
+
+small {
+  font-size: 0.8125rem;
+}

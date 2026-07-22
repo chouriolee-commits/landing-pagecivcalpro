@@ -1,0 +1,81 @@
+/**
+ * HowItWorks — banda navy con 4 pasos numerados conectados por línea punteada.
+ */
+.how-it-works {
+  padding: 1rem 0 var(--section-pad);
+  background-color: var(--color-bg-light);
+}
+
+.how-it-works__band {
+  padding: 3rem 3rem 3.5rem;
+}
+
+.how-it-works__band .section-title {
+  margin-bottom: 2.5rem;
+}
+
+.how-it-works__steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  counter-reset: step;
+}
+
+.how-it-works__step {
+  position: relative;
+}
+
+/* Línea punteada que conecta los pasos en escritorio */
+.how-it-works__step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: calc(34px + 0.75rem);
+  right: -1.25rem;
+  border-top: 2px dashed rgba(74, 222, 128, 0.35);
+}
+
+.how-it-works__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.how-it-works__step h3 {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.how-it-works__step p {
+  color: var(--color-text-light-muted);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 900px) {
+  .how-it-works__steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .how-it-works__step:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .how-it-works__steps {
+    grid-template-columns: 1fr;
+  }
+
+  .how-it-works__band {
+    padding: 2.5rem 1.5rem;
+  }
+}
